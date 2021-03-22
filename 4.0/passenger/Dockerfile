@@ -29,5 +29,7 @@ RUN set -eux; \
 
 # adjust Passenger to write the PID to the same file as "rails server"
 ENV PASSENGER_PID_FILE tmp/pids/server.pid
+# and to send logs to stdout
+ENV PASSENGER_LOG_FILE /dev/stdout
 
 CMD ["passenger", "start"]
